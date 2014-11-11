@@ -1,39 +1,88 @@
-// Your use of the YouTube API must comply with the Terms of Service:
-// https://developers.google.com/youtube/terms
+var videoIDs = [
+    'nGt_JGHYEO4',
+    'p2cQSPRTdhg',
+    'wzMrK-aGCug',
+    'b-J95fYuVz4',
+    'xvM3YwmDfwE',
+    '-I-YY5p0uq8',
+    'YWyHZNBz6FE',
+    'LbouTdwOrVw',
+    'avFq9errZCk',
+    'AI0gk2KJeho',
+    'TUj0otkJEBo',
+    '8HYXw1vADFQ',
+    'VN4upVaDFFs',
+    'M37HHf099oM',
+    'JXRN_LkCa_o',
+    'BIBNPSsbZmk',
+    'ui1JiOZ1zp4',
+    'RubBzkZzpUA',
+    'BhnQxhjT4hE', 
+    '_Ht6gSClAzo',
+    'k2rqUlYN1m8',
+    '-KKbdErJkiY',
+    'eU4ZvfkmOck',
+    '-6jhuhsG-7w',
+    'X8LUd51IuiA',
+    '45Q4Zk3CN8k',
+    'zzO4zqWQLvY',
+    '-s7TCuCpB5c',
+    'FlSbCKne7zE',
+    'ae_Ev_lwpUg',
+    'vPFB0rM1Xxk',
+    'iXZxipry6kE',
+    '6l7J1i1OkKs',
+    'bbEoRnaOIbs',
+    'e2QKlmMT8II',
+    'atHekn9KE18',
+    'xKkb13IU_DE',
+    'cZaJYDPY-YQ',
+    'iXZxipry6kE',
+    'BiOmXeKyrxo',
+    'gczBgNB-p1w',
+    'qdsTUfDTEhQ',
+    'a1aZjlpvpS0',
+    'lHHM2YosO4A',
+    'M37HHf099oM',
+    'rtodyi12q-4',
+    'L-rQZ6IGhCM',
+    'Z4RV2-YmwwM',
+    'j5Z3KUOrhS0',
+    'uQZMaG1eO74',
+    'liZm1im2erU',
+    'XbGs_qK2PQA',
+    'oQEhmT7AJ44',
+    '0pot44zodCc',
+    'iXZxipry6kE',
+    'tfRW88oBbbE',
+    'Y34jC4I1m70',
+    'gP4n1zyN4KY',
+    'tOOPrBWIwBQ',
+    'zNMuIPsz6lE'
+];
 
-// Helper function to display JavaScript value on HTML page.
-function showResponse(response) {
-    var responseString = JSON.stringify(response, '', 2);
-    document.getElementById('response').innerHTML += responseString;
-}
+var player, currentVideoId = 0;
 
-// Called automatically when JavaScript client library is loaded.
-function onClientLoad() {
-    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
-}
-
-// Called automatically when YouTube API interface is loaded (see line 9).
-function onYouTubeApiLoad() {
-    // This API key is intended for use only in this lesson.
-    // See http://goo.gl/PdPA1 to get a key for your own applications.
-    gapi.client.setApiKey('AIzaSyAzodi-_WV2cXEo8FujwSTCVee9QHiDcGw');
-
-    search();
-}
-
-function search() {
-    // Use the JavaScript client library to create a search.list() API call.
-    var request = gapi.client.youtube.search.list({
-        part: 'snippet',
-        q: 'power'
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '600',
+        width: '100%',
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
     });
-    
-    // Send the request to the API server,
-    // and invoke onSearchRepsonse() with the response.
-    request.execute(onSearchResponse);
 }
 
-// Called automatically with the response of the YouTube API request.
-function onSearchResponse(response) {
-    showResponse(response);
+function onPlayerReady(event) {
+    event.target.loadVideoById(videoIDs[currentVideoId]);
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.ENDED) {
+        currentVideoId++;
+        if (currentVideoId < videoIDs.length) {
+            player.loadVideoById(videoIDs[currentVideoId]);
+        }
+    }
 }

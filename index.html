@@ -14,39 +14,6 @@
 <body>
 <div id="player"></div>
 <script src="//www.youtube.com/iframe_api"></script>
-<script>
-
-    var videoIDs = [
-        'nGt_JGHYEO4',
-        'p2cQSPRTdhg',
-        'CxnaPa8ohmM',
-    ];
-
-    var player, currentVideoId = 0;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '600',
-            width: '100%',
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    function onPlayerReady(event) {
-        event.target.loadVideoById(videoIDs[currentVideoId]);
-    }
-
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.ENDED) {
-            currentVideoId++;
-            if (currentVideoId < videoIDs.length) {
-                player.loadVideoById(videoIDs[currentVideoId]);
-            }
-        }
-    }
-</script>
+<script src="search.js" type="text/javascript"></script>
 </body>
 </html>
