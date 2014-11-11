@@ -13,45 +13,39 @@
  -->
 <body>
 <div id="player"></div>
+<script src="//www.youtube.com/iframe_api"></script>
 <script>
-	var videoIdentify = ["p2cQSPRTdhg", "wzMrK-aGCug",]
-    //Load player api asynchronously.
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    var done = false;
-    var player;
-    var song = videoIdentify[0];
-    setTimeout(nextSong, 6000);
+
+    var videoIDs = [
+        'nGt_JGHYEO4',
+        'p2cQSPRTdhg',
+        'CxnaPa8ohmM',
+    ];
+
+    var player, currentVideoId = 0;
+
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          height: '625',
-          width: '100%',
-          videoId: song,
-          start: '10',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
+            height: '600',
+            width: '100%',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
         });
     }
-    function onPlayerReady(evt) {
-        evt.target.playVideo();
+
+    function onPlayerReady(event) {
+        event.target.loadVideoById(videoIDs[currentVideoId]);
     }
-    function onPlayerStateChange(evt) {
-        if (evt.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 60000);
-            done = true;
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            currentVideoId++;
+            if (currentVideoId < videoIDs.length) {
+                player.loadVideoById(videoIDs[currentVideoId]);
+            }
         }
-    }
-    function stopVideo() {
-        player.stopVideo();
-    }
-    function nextSong(){
-		for (var i = 0; i < 61; i++) {	
-			song = videoIdentify[i];
-		};
     }
 </script>
 </body>
