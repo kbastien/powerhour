@@ -6,7 +6,7 @@ var videoIDs = [
     'xvM3YwmDfwE',
     '-I-YY5p0uq8',
     'YWyHZNBz6FE',
-    'LbouTdwOrVw',
+    'PdfQtC2EZ1k',
     'avFq9errZCk',
     'AI0gk2KJeho',
     'TUj0otkJEBo',
@@ -16,7 +16,7 @@ var videoIDs = [
     'JXRN_LkCa_o',
     'BIBNPSsbZmk',
     'ui1JiOZ1zp4',
-    'RubBzkZzpUA',
+    'CccnAvfLPvE',
     'BhnQxhjT4hE', 
     '_Ht6gSClAzo',
     'k2rqUlYN1m8',
@@ -45,8 +45,8 @@ var videoIDs = [
     'lHHM2YosO4A',
     'M37HHf099oM',
     'rtodyi12q-4',
-    'L-rQZ6IGhCM',
     'Z4RV2-YmwwM',
+    'dA3Bxc3A5hA',
     'j5Z3KUOrhS0',
     'uQZMaG1eO74',
     'liZm1im2erU',
@@ -65,7 +65,7 @@ var player, currentVideoId = 0;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '600',
+        height: '650',
         width: '100%',
         events: {
             'onReady': onPlayerReady,
