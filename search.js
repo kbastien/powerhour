@@ -62,27 +62,31 @@ var videoIDs = [
 ];
 
 var player, currentVideoId = 0;
-
+//in seconds
+var startVar = 70;
+var endVar = 130;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '650',
         width: '100%',
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onStateChange': onPlayerStateChange,
+            'startSeconds': startVar, 
+            'endSeconds': endVar
         }
     });
 }
 
 function onPlayerReady(event) {
-    event.target.loadVideoById(videoIDs[currentVideoId]);
+    event.target.loadVideoById({'videoId': videoIDs[currentVideoId], 'startSeconds': 70, 'endSeconds': 130});
 }
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
         currentVideoId++;
         if (currentVideoId < videoIDs.length) {
-            player.loadVideoById(videoIDs[currentVideoId]);
+            player.loadVideoById({'videoId': videoIDs[currentVideoId], 'startSeconds': 70, 'endSeconds': 130});
         }
     }
 }
