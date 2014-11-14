@@ -11,9 +11,55 @@
 	   ~~----~~
 	   DRINK UP!!
  -->
+<head>
+<link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="bower_components/simple-sidebar/dist/jquery.simplesidebar.min.js"></script>
+<script src="bower_components/jquery-simple-timer/jquery.simple.timer.js" type="text/javascript"></script>
+</head>
 <body>
-<div id="player"></div>
-<script src="//www.youtube.com/iframe_api"></script>
-<script src="search.js" type="text/javascript"></script>
+	
+	
+	<div class="wrapper">
+		<div id="player"></div>
+	</div>
+  
+	<section id="sidebar">
+		<h2>Timer</h2>
+		<div class="timer" data-seconds-left=3600></div>
+	</section>
+  
+	<section class="navbar">
+		<div id="open-sb" class="menu-icon menu-button menu-left"><img src="img/timer.png"></div>
+	</section>
+	<script>
+	$( '#sidebar' ).simpleSidebar({
+	    settings: {
+	        opener: ".menu-button",
+	        wrapper: "#wrapper",
+	    },
+	    sidebar: {
+	        align: "left",
+	        width: 250,
+	        closingLinks: "a",
+	        style: {
+	            zIndex: 100,
+	            backgroundColor: "#A0C6F6"
+	        }
+	    },
+	    mask: {
+	        style: {
+	            backgroundColor: "grey",
+	            opacity: 0.9,
+	            filter: 'Alpha(opacity=90)'
+	        }
+	    }
+	});
+	</script>
+	<script src="//www.youtube.com/iframe_api"></script>
+	<script src="js/timer.js" type="text/javascript"></script>
+	<script src="js/search.js" type="text/javascript"></script>
+
 </body>
 </html>
