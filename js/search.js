@@ -30,7 +30,7 @@ var videoIDs = [
     'FlSbCKne7zE',
     'ae_Ev_lwpUg',
     'cC2ZgCEaLWs',
-    'iXZxipry6kE',
+    'dGd9DTTrX4U',
     '6l7J1i1OkKs',
     'bbEoRnaOIbs',
     'e2QKlmMT8II',
@@ -41,7 +41,7 @@ var videoIDs = [
     'BiOmXeKyrxo',
     'gczBgNB-p1w',
     'qdsTUfDTEhQ',
-    '98TLWIwiH28',
+    'X98HX5nbsCI',
     'oQEhmT7AJ44',
     'vJwKKKd2ZYE',
     'rtodyi12q-4',
@@ -82,6 +82,14 @@ function onPlayerStateChange(event) {
         currentVideoId++;
         if (currentVideoId < videoIDs.length) {
             player.loadVideoById({'videoId': videoIDs[currentVideoId], 'startSeconds': 70, 'endSeconds': 130});
+
         }
+    }
+    var state = player.getPlayerState();
+    if (state == 2) {
+        timer.pause();
+    }
+    else {
+        timer.start({countdown: true, startValues: {hours: 1}});
     }
 }
