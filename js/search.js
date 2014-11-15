@@ -80,7 +80,7 @@ function onPlayerReady(event) {
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
         currentVideoId++;
-        var audio = new Audio('../img/alert.mp3');
+        var audio = new Audio('../audio/alert.mp3');
         if (currentVideoId < videoIDs.length) {
             audio.play();
             player.loadVideoById({'videoId': videoIDs[currentVideoId], 'startSeconds': 70, 'endSeconds': 130});
@@ -91,7 +91,7 @@ function onPlayerStateChange(event) {
     if (state == 2) {
         timer.pause();
     }
-    else if(state == 1){
+    else if(state == 130){
         timer.start({countdown: true, startValues: {hours: 1}});    
     }
 }
