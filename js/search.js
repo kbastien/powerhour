@@ -29,7 +29,7 @@ var videoIDs = [
     '-s7TCuCpB5c',
     'FlSbCKne7zE',
     'ae_Ev_lwpUg',
-    'vPFB0rM1Xxk',
+    'cC2ZgCEaLWs',
     'iXZxipry6kE',
     '6l7J1i1OkKs',
     'bbEoRnaOIbs',
@@ -41,9 +41,9 @@ var videoIDs = [
     'BiOmXeKyrxo',
     'gczBgNB-p1w',
     'qdsTUfDTEhQ',
-    'a1aZjlpvpS0',
-    'lHHM2YosO4A',
-    'M37HHf099oM',
+    '98TLWIwiH28',
+    'oQEhmT7AJ44',
+    'vJwKKKd2ZYE',
     'rtodyi12q-4',
     'Z4RV2-YmwwM',
     'dA3Bxc3A5hA',
@@ -62,9 +62,6 @@ var videoIDs = [
 ];
 
 var player, currentVideoId = 0;
-//in seconds
-var startVar = 70;
-var endVar = 130;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '650',
@@ -72,8 +69,6 @@ function onYouTubeIframeAPIReady() {
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
-            'startSeconds': startVar, 
-            'endSeconds': endVar
         }
     });
 }
