@@ -91,7 +91,7 @@ function onPlayerStateChange(event) {
     if (state == 2) {
         timer.pause();
     }
-    else if(state == 130){
+    else if(state == 1){
         timer.start({countdown: true, startValues: {hours: 1}});    
     }
 }
