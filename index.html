@@ -66,26 +66,6 @@
 	    }
 	});
 	</script>
-	<script type="text/javascript">
-		var timer = new Timer();
-		$('#chrono .startButton').click(function () {
-		    timer.start({countdown: true, startValues: {hours: 1}});
-		    player.playVideo();
-		});
-		$('#chrono .pauseButton').click(function () {
-		    timer.pause();
-		    player.pauseVideo();
-		});
-		// $('#chrono .stopButton').click(function () {
-		//     timer.stop();
-		// });
-		timer.addEventListener('secondsUpdated', function (e) {
-		    $('#chrono .values').html(timer.getTimeValues().toString());
-		});
-		timer.addEventListener('started', function (e) {
-		    $('#chrono .values').html(timer.getTimeValues().toString());
-		});
-	</script>
 	<script src="js/search.js" type="text/javascript"></script>
 </body>
 </html>

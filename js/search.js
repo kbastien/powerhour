@@ -88,10 +88,32 @@ function onPlayerStateChange(event) {
         }
     }
     var state = player.getPlayerState();
-    if (state == 2) {
+    if (state == 2 || state == 3) {
         timer.pause();
     }
-    else if(state == 1){
-        timer.start({countdown: true, startValues: {hours: 1}});    
+    else if(timer.isRunning()){
+        //already running
+    }
+    else {
+        timer.start({countdown: true, startValues: {hours: 1}});
     }
 }
+
+var timer = new Timer();
+$('#chrono .startButton').click(function () {
+    timer.start({countdown: true, startValues: {hours: 1}});
+    player.playVideo();
+});
+$('#chrono .pauseButton').click(function () {
+    timer.pause();
+    player.pauseVideo();
+});
+// $('#chrono .stopButton').click(function () {
+//     timer.stop();
+// });
+timer.addEventListener('secondsUpdated', function (e) {
+    $('#chrono .values').html(timer.getTimeValues().toString());
+});
+timer.addEventListener('started', function (e) {
+    $('#chrono .values').html(timer.getTimeValues().toString());
+});
