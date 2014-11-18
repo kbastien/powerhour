@@ -88,7 +88,7 @@ function onPlayerStateChange(event) {
         }
     }
     var state = player.getPlayerState();
-    if (state == 2 || state == 3 || state == -5) {
+    if (state == -5 || state == 0 || state == 2 || state == 3) {
         timer.pause();
     }
     else if(timer.isRunning()){
