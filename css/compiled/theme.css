@@ -1,6 +1,9 @@
 body {
   font-family: 'Roboto', sans-serif; }
 
+.glyphicon {
+  color: #ff0000; }
+
 iframe {
   position: absolute;
   top: 0px;
@@ -21,6 +24,11 @@ iframe {
     margin-left: 15px; }
   #sidebar h3 {
     margin-bottom: 1px; }
+  #sidebar .buttons {
+    margin-top: 1em; }
+  #sidebar .values {
+    margin-top: .5em;
+    font-size: 22px; }
 
 .menu-button {
   content: "";
@@ -37,10 +45,6 @@ iframe {
   .menu-button img {
     margin-top: 15px;
     width: 30px; }
-
-.container {
-  font-size: 100pt;
-  text-align: center; }
 
 .hours {
   float: left; }

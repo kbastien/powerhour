@@ -12,60 +12,42 @@
 	   DRINK UP!!
  -->
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Hour</title>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,500,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
 <script src="bower_components/simple-sidebar/dist/jquery.simplesidebar.min.js"></script>
 <script src="bower_components/easytimer.js/dist/easytimer.min.js" type="text/javascript"></script>
-<script src="//www.youtube.com/iframe_api"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="wrapper">
-		<div id="player"></div>
-	</div>
-  
-	<section id="sidebar">
-		<h1>Power Hour</h1>
-		<h3>Timer</h3>
-		<div id="chrono">
-		    <div class="values">01:00:00</div>
-			    <div>
-			        <button class="startButton">Start</button>
-			        <button class="pauseButton" >Pause</button>
-			    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<h1>Power Hour</h1>
+				<p>Welcome to the best Power Hour site you have ever seen. Here you'll be able to Power Hour with your friends, watching a bunch of mostly Hip-Hop videos :)</p>
+				<ol>
+					<li>Fill up a shot glass full of whatever liquid you desire.</li>
+					<li>After every video, you will hear a horn, and then take a shot.</li>
+					<li>After 60 minutes, the Power Hour is over and you can move on with your life.</li>
+				</ol>
+				<p>Disclaimer: I do not take any responsibility for what you scoundrels descide to do with this site. Also, the timer may be a little off depending on video load times. Have fun!</p>
+				<a href="power.html"><button type="button" class="btn btn-md btn-success">Go!</button></a>
 			</div>
 		</div>
-
-	</section>
-  
-	<section class="navbar">
-		<div id="open-sb" class="menu-icon menu-button menu-left"><img src="img/timer.png"></div>
-	</section>
-	<script>
-	$( '#sidebar' ).simpleSidebar({
-	    settings: {
-	        opener: ".menu-button",
-	        wrapper: "#wrapper",
-	    },
-	    sidebar: {
-	        align: "left",
-	        width: 250,
-	        closingLinks: "a",
-	        style: {
-	            zIndex: 100,
-	            backgroundColor: "#A0C6F6"
-	        }
-	    },
-	    mask: {
-	        style: {
-	            backgroundColor: "grey",
-	            opacity: 0.9,
-	            filter: 'Alpha(opacity=90)'
-	        }
-	    }
-	});
-	</script>
-	<script src="js/video.js" type="text/javascript"></script>
+	</div>
+	<div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+      	<div class="col-lg-4 col-lg-offset-4">
+        	<p class="navbar-text">Made with <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> by <a href="http://kevinbastien.com"> Kevin Bastien</a></p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
