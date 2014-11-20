@@ -8,9 +8,13 @@ body {
   color: #ff0000;
 }
 
+#footer-text {
+  text-align: center;
+}
+
 
 //power.html styles
-iframe{
+.wrapper iframe{
   position:absolute; 
   top:0px; 
   left:0px; 
@@ -28,7 +32,7 @@ iframe{
 #sidebar{
   color: white;
   
-  h1, h3, .timer, #chrono{
+  h1, h3, .timer, #chrono, .sharing{
     margin-left: 15px;
   }
 
@@ -41,8 +45,16 @@ iframe{
   }
 
   .values{
-    margin-top: .5em;
+    margin-top: .25em;
     font-size: 22px;
+  }
+
+  .sharing {
+    margin-top: 5em;
+    
+    iframe {
+      width: 10em;
+    }
   }
 }
 

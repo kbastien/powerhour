@@ -4,7 +4,10 @@ body {
 .glyphicon {
   color: #ff0000; }
 
-iframe {
+#footer-text {
+  text-align: center; }
+
+.wrapper iframe {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -20,15 +23,19 @@ iframe {
 
 #sidebar {
   color: white; }
-  #sidebar h1, #sidebar h3, #sidebar .timer, #sidebar #chrono {
+  #sidebar h1, #sidebar h3, #sidebar .timer, #sidebar #chrono, #sidebar .sharing {
     margin-left: 15px; }
   #sidebar h3 {
     margin-bottom: 1px; }
   #sidebar .buttons {
     margin-top: 1em; }
   #sidebar .values {
-    margin-top: .5em;
+    margin-top: .25em;
     font-size: 22px; }
+  #sidebar .sharing {
+    margin-top: 5em; }
+    #sidebar .sharing iframe {
+      width: 10em; }
 
 .menu-button {
   content: "";

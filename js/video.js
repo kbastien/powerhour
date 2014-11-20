@@ -91,7 +91,7 @@ function onPlayerStateChange(event) {
     if (state == -5 || state == 0 || state == 2 || state == 3) {
         timer.pause();
     }
-    else if(timer.isRunning()){
+    else if(timer.isRunning() && state == 1){
         //already running
     }
     else {
